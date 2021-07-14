@@ -1,14 +1,15 @@
+require './lib/joke'
+
 class User
-  attr_reader :name,
-              :jokes
+  attr_reader :name, :jokes
 
   def initialize(name)
     @name = name
     @jokes = []
   end
 
-  def learn(joke)
-    @jokes << joke
+  def learn(chuckle_words)
+    @jokes << chuckle_words
   end
 
   def tell(user, joke)
@@ -16,8 +17,6 @@ class User
   end
 
   def joke_by_id(id)
-    @jokes.find do |joke|
-      joke.id == id
-    end
+    @jokes.detect {|joke| joke.id == id}
   end
 end
