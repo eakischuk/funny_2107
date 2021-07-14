@@ -10,4 +10,8 @@ class OpenMic
     @performers = []
   end
 
+  def welcome(performer)
+    @performers << performer
+  end
+
 end
