@@ -16,5 +16,17 @@ RSpec.describe OpenMic do
     it 'is an instance of OpenMic' do
       expect(@open_mic).to be_a(OpenMic)
     end
+
+    it 'has a date' do
+      expect(@open_mic.date).to eq("11-20-18")
+    end
+
+    it 'has a location' do
+      expect(@open_mic.location).to eq("Comedy Works")
+    end
+
+    it 'starts without performers' do
+      expect(@open_mic.performers).to eq([])
+    end
   end
 end
