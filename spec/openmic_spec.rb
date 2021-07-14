@@ -28,5 +28,12 @@ RSpec.describe OpenMic do
     it 'starts without performers' do
       expect(@open_mic.performers).to eq([])
     end
+
+    it 'can welcome performers' do
+      @open_mic.welcome(@user_1)
+      @open_mic.welcome(@user_2)
+
+      expect(@open_mic.performers).to eq([@user_1, @user_2])
+    end
   end
 end
