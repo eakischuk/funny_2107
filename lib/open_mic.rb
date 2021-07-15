@@ -14,4 +14,11 @@ class OpenMic
     @performers << performer
   end
 
+  def repeated_jokes?
+    set = @performers.map do |performer|
+      performer.jokes
+    end
+    set.length == set.uniq.length
+  end
+
 end
