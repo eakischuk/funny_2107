@@ -35,5 +35,16 @@ RSpec.describe OpenMic do
 
       expect(@open_mic.performers).to eq([@user_1, @user_2])
     end
+
+    it 'can identify repeated jokes' do
+      @user_2.learn(@joke_1)
+      @user_2.learn(@joke_2)
+
+      expect(@open_mic.repeated_jokes?).to eq(false)
+
+      @user_1.learn(@joke_1)
+
+      expect(@open_mic.repeated_jokes?).to eq(true)
+    end
   end
 end
